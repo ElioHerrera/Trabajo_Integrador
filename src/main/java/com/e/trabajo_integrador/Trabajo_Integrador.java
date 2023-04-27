@@ -5,13 +5,17 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+         ****************  @author ELIO  ****************
+ */
+
 public class Trabajo_Integrador {
 
     public static void main(String[] args) throws SQLException {
         ConeccionServidor objetoConexion = new ConeccionServidor();
         objetoConexion.Conectar();
 
-        ResultSet dato = objetoConexion.rsCon;
+        ResultSet dato = objetoConexion.resultadoSELEC;
         List<Partido> listaPartidos = new ArrayList<>();
         List<Pronostico> listaPronostico = new ArrayList<>();
         List<Ronda> listaRonda = new ArrayList<>();
@@ -71,9 +75,7 @@ public class Trabajo_Integrador {
         
         System.out.println("------------------------------------------------");
         System.out.println("º");
-       
     }
-  
     public static Partido BuscarPartidoPorNombreEquipos(List<Partido> listaPartidos, String nombreEquipoLocal, String nombreEquipoVisitante) {
 
         Partido partidoEncontrado = listaPartidos.stream()
